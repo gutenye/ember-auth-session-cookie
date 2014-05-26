@@ -1,7 +1,7 @@
 Em.onLoad 'Ember.Application', (application) ->
   application.initializer
     name: 'ember-auth.session.cookie'
-    before: 'ember-auth-load'
+    after: 'ember-auth'
 
     initialize: (container, app) ->
       app.register 'authSession:cookie', Em.Auth.CookieAuthSession, \

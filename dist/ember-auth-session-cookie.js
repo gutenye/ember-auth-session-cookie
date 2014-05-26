@@ -96,7 +96,7 @@ var get$ = Ember.get;
 Em.onLoad('Ember.Application', function (application) {
   application.initializer({
     name: 'ember-auth.session.cookie',
-    before: 'ember-auth-load',
+    after: 'ember-auth',
     initialize: function (container, app) {
       app.register('authSession:cookie', get$(get$(Em, 'Auth'), 'CookieAuthSession'), { singleton: true });
       return app.inject('authSession:cookie', 'auth', 'auth:main');
